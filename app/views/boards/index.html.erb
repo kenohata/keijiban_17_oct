@@ -7,7 +7,7 @@
     </div>
 
     <div class="panel">
-      <%= form_for Board.new do |f| %>
+      <%= form_for @board do |f| %>
         <%= f.text_field :name %>
         <%= f.text_field :from %>
         <%= f.text_field :email %>
