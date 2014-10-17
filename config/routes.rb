@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :boards
+
   get 'boards' => 'boards#index'
   post 'boards' => 'boards#create'
   get 'boards/:id' => 'boards#show'
