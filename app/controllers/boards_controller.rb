@@ -4,6 +4,7 @@ class BoardsController < ApplicationController
   end
 
   def create
+    raise
     @board = Board.new(params_board)
 
     @board.save
