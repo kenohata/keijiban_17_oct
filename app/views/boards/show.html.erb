@@ -9,11 +9,18 @@
       <h1 class="board--name"><%= @board.name %></h1>
 
       <div class="comments">
-        <% @board.comments.each do |comment| %>
-          <%= comment.from %>
-          <%= comment.email %>
-          <%= comment.content %>
-          <%= link_to "削除する", board_comment_path(@board, comment), method: :delete, data: { confirm: "本当に削除しますか?" } %>
+        <% @board.comments.each_with_index do |comment, index| %>
+          <div class="comment">
+            <div class="comment--heading">
+              <%= index + 1 %>:
+              <%= link_to comment.from, "mailto:#{comment.email}", class: "comment--from" %>:
+              <%= comment.created_at.strftime("%Y/%m/%d %H:%M:%S ") %>
+              <%= link_to "削除する", board_comment_path(@board, comment), method: :delete, data: { confirm: "本当に削除しますか?" } %>
+            </div>
+            <div class="comment-body">
+              <%= comment.content %>
+            </div>
+          </div>
         <% end %>
       </div>
     </div>
