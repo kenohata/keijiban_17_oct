@@ -2,12 +2,12 @@
   <div class="container">
     <div class="panel">
       <% @boards.each do |board| %>
-        <%= link_to board.name, "/boards/#{board.id}" %>
+        <%= link_to board.name, board_path(board) %>
       <% end %>
     </div>
 
     <div class="panel">
-      <%= form_tag "/boards", method: :post do %>
+      <%= form_tag boards_path, method: :post do %>
         <%= text_field_tag :name %>
         <%= text_field_tag :from %>
         <%= text_field_tag :email %>
