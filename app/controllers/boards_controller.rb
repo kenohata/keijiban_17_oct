@@ -3,12 +3,7 @@ class BoardsController < ApplicationController
   end
 
   def create
-    @board = Board.new({
-      name:    params[:name],
-      from:    params[:from],
-      email:   params[:email],
-      content: params[:content],
-      })
+    @board = Board.new(params)
 
     raise Exception, @board.inspect
   end
