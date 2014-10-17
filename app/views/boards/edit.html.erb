@@ -3,6 +3,7 @@
     <div class="nav">
       <%= link_to "■掲示板に戻る■", "/boards" %>
       <%= link_to "■スレッドに戻る■", "/boards/#{@board.id}" %>
+      <%= link_to "削除する", "/boards/#{@board.id}", method: :delete, data: { confirm: "本当に削除しますか？" } %>
     </div>
     <h1><%= @board.name %></h1>
     <div class="panel">
