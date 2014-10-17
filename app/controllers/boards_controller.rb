@@ -7,7 +7,7 @@ class BoardsController < ApplicationController
     @board = Board.new(params_board)
 
     @board.save
-    redirect_to "/boards"
+    redirect_to board_url(@board)
   end
 
   def show
@@ -22,14 +22,14 @@ class BoardsController < ApplicationController
     @board = Board.find(params[:id])
 
     @board.update_attributes(params_board)
-    redirect_to "/boards/#{@board.id}"
+    redirect_to board_url(@board)
   end
 
   def destroy
     @board = Board.find(params[:id])
 
     @board.destroy
-    redirect_to "/boards"
+    redirect_to boards_url
   end
 
   private
