@@ -4,6 +4,9 @@
       <%= link_to "■掲示板に戻る■", boards_path %>
       <%= link_to "編集する", edit_board_path(@board) %>
     </div>
-    <h1><%= @board.name %></h1>
+    <hr>
+    <div class="board">
+      <h1 class="board--name"><%= @board.name %></h1>
+    </div>
   </div>
 </div>

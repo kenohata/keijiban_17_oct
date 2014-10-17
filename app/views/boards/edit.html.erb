@@ -5,7 +5,10 @@
       <%= link_to "■スレッドに戻る■", board_path(@board) %>
       <%= link_to "削除する", board_path(@board), method: :delete, data: { confirm: "本当に削除しますか？" } %>
     </div>
-    <h1><%= @board.name %></h1>
+    <hr>
+    <div class="board">
+      <h1 class="board--name"><%= @board.name %></h1>
+    </div>
     <div class="panel">
       <%= form_for @board do |f| %>
         <%= f.text_field :name %>
