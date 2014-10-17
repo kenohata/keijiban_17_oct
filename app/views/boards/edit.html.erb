@@ -7,12 +7,12 @@
     </div>
     <h1><%= @board.name %></h1>
     <div class="panel">
-      <%= form_tag board_path(@board), method: :put do %>
-        <%= text_field_tag :name, @board.name %>
-        <%= text_field_tag :from, @board.from %>
-        <%= text_field_tag :email, @board.email %>
-        <%= text_field_tag :content, @board.content %>
-        <%= submit_tag %>
+      <%= form_for @board do |f| %>
+        <%= f.text_field :name %>
+        <%= f.text_field :from %>
+        <%= f.text_field :email %>
+        <%= f.text_area :content %>
+        <%= f.submit %>
       <% end %>
     </div>
   </div>
