@@ -4,7 +4,6 @@ class BoardsController < ApplicationController
   end
 
   def create
-    raise
     @board = Board.new(params_board)
 
     @board.save
@@ -36,6 +35,6 @@ class BoardsController < ApplicationController
   private
 
   def params_board
-    params.permit(:name, :from, :email, :content)
+    params.require(:board).permit(:name, :from, :email, :content)
   end
 end
