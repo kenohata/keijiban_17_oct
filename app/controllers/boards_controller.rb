@@ -25,6 +25,13 @@ class BoardsController < ApplicationController
     redirect_to "/boards/#{@board.id}"
   end
 
+  def destroy
+    @board = Board.find(params[:id])
+
+    @board.destroy
+    redirect_to "/boards"
+  end
+
   private
 
   def params_board
