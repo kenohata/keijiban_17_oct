@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="nav">
+      <%= link_to "■掲示板に戻る■", "/boards" %>
+      <%= link_to "■スレッドに戻る■", "/boards/#{@board.id}" %>
+    </div>
+    <h1><%= @board.name %></h1>
+    <div class="panel">
+      <%= form_tag "/boards/#{@board.id}", method: :put do %>
+        <%= text_field_tag :name, @board.name %>
+        <%= text_field_tag :from, @board.from %>
+        <%= text_field_tag :email, @board.email %>
+        <%= text_field_tag :content, @board.content %>
+        <%= submit_tag %>
+      <% end %>
+    </div>
+  </div>
+</div>
