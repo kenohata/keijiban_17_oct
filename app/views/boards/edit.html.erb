@@ -9,12 +9,40 @@
     <div class="board">
       <h1 class="board--name"><%= @board.name %></h1>
     </div>
-    <div class="panel">
+    <div class="form">
       <%= form_for @board do |f| %>
-        <%= f.text_field :name %>
-        <%= f.text_field :from %>
-        <%= f.text_field :email %>
-        <%= f.text_area :content %>
+        <div>
+          <div class="form--label">
+            タイトル
+          </div>
+          <div class="form--input">
+            <%= f.text_field :name %>
+          </div>
+        </div>
+        <div>
+          <div class="form--label">
+            名前
+          </div>
+          <div class="form--input">
+            <%= f.text_field :from %>
+          </div>
+        </div>
+        <div>
+          <div class="form--label">
+            Email
+          </div>
+          <div class="form--input">
+            <%= f.text_field :email %>
+          </div>
+        </div>
+        <div>
+          <div class="form--label">
+            内容
+          </div>
+          <div class="form--input">
+            <%= f.text_area :content %>
+          </div>
+        </div>
         <%= f.submit %>
       <% end %>
     </div>
