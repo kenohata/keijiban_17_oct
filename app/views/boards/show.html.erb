@@ -8,5 +8,12 @@
     <div class="board">
       <h1 class="board--name"><%= @board.name %></h1>
     </div>
+    <hr>
+    <%= form_for @comment, url: board_comments_path(@board, @comment) do |f| %>
+      <%= f.text_field :from %>
+      <%= f.text_field :email %>
+      <%= f.text_area :content %>
+      <%= f.submit %>
+    <% end %>
   </div>
 </div>
