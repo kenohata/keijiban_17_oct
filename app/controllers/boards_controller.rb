@@ -3,6 +3,7 @@ class BoardsController < ApplicationController
   end
 
   def create
-    raise
+    @board = Board.new
+    raise Exception, @board.inspect
   end
 end
