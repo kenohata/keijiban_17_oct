@@ -2,7 +2,7 @@
   <div class="container">
     <div class="panel">
       <% @boards.each do |board| %>
-        <%= board.name %>
+        <%= link_to board.name, "/boards/#{board.id}" %>
       <% end %>
     </div>
 
