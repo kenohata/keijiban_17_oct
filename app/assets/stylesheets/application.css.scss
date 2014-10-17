@@ -46,3 +46,23 @@ html, body {
     font-weight: normal;
   }
 }
+
+.comment {
+  margin: 20px 0;
+
+  .comment--heading {
+    &:hover {
+      background-color: #fee;
+    }
+  }
+
+  .comment--from {
+    color: green;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .comment-body {
+    padding:0 0 0 40px;
+  }
+}
