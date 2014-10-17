@@ -1,7 +1,9 @@
 <div class="wrapper wrapper__bg">
   <div class="container">
     <div class="panel">
-      this is boards/index.html.erb
+      <% @boards.each do |board| %>
+        <%= board.name %>
+      <% end %>
     </div>
 
     <div class="panel">
