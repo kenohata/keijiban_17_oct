@@ -7,6 +7,15 @@
     <hr>
     <div class="board">
       <h1 class="board--name"><%= @board.name %></h1>
+
+      <div class="comments">
+        <% @board.comments.each do |comment| %>
+          <%= comment.from %>
+          <%= comment.email %>
+          <%= comment.content %>
+          <%= link_to "削除する", board_comment_path(@board, comment), method: :delete, data: { confirm: "本当に削除しますか?" } %>
+        <% end %>
+      </div>
     </div>
     <hr>
     <%= form_for @comment, url: board_comments_path(@board, @comment) do |f| %>
