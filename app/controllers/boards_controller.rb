@@ -5,7 +5,8 @@ class BoardsController < ApplicationController
   def create
     @board = Board.new(params_board)
 
-    raise Exception, @board.inspect
+    @board.save
+    redirect_to "/boards"
   end
 
   private
