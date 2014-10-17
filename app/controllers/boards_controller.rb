@@ -26,8 +26,11 @@ class BoardsController < ApplicationController
   def update
     @board = Board.find(params[:id])
 
-    @board.update_attributes(params_board)
-    redirect_to board_url(@board)
+    if @board.update_attributes(params_board)
+      redirect_to board_url(@board)
+    else
+      render "edit"
+    end
   end
 
   def destroy
