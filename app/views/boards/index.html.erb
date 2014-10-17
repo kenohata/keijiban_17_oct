@@ -5,14 +5,13 @@
     </div>
 
     <div class="panel">
-      <form action="/boards" method="POST">
-        <input type="text" name="name">
-        <input type="text" name="from">
-        <input type="text" name="email">
-        <input type="text" name="content">
-        <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
-        <input type="submit" >
-      </form>
+      <%= form_tag "/boards", method: :post do %>
+        <%= text_field_tag :name %>
+        <%= text_field_tag :from %>
+        <%= text_field_tag :email %>
+        <%= text_field_tag :content %>
+        <%= submit_tag %>
+      <% end %>
     </div>
   </div>
 </div>
