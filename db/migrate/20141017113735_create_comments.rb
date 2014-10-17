@@ -7,6 +7,8 @@ class CreateComments < ActiveRecord::Migration
       t.text :content
 
       t.timestamps
+
+      t.index :board_id
     end
   end
 end
